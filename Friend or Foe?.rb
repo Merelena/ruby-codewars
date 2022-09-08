@@ -12,7 +12,7 @@
 
 #  Решение 1 - тесты прошли, но как по мне оно не соотв условию "exactly 4 letters"
 def friend(friends)
-  friends.delete_if { |x| x.length != 4 }
+  friends.delete_if { |x| x.length != 4 } # AH: на самом деле, тесты не предусматривают проверку на небуквенныеы значения в строке
 end
 
 # Нерабочие варианты - я так и не нашла решение с "exactly 4 letters"
@@ -42,7 +42,7 @@ end
 #
 # Реш 3
 # def friend(friends)
-#   #your code here
+#   AH: на самом деле алгоритм тот же что и с delet_if или select, просто без их использования:)
 #   friend_array = []
 #   friends.each { |name|
 #     if name.length == 4
