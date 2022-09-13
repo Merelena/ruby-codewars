@@ -12,7 +12,7 @@
 #
 #
 def disemvowel(str)
-  str.delete ("aeiouAEIOU")
+  str.delete ("aeiouAEIOU") # AH: все ок
 end
 
 # Второе решение
