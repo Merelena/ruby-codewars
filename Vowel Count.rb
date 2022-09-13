@@ -8,7 +8,7 @@
 # sub заменяет только первое вхождение указанного шаблона, тогда как gsub делает это для всех вхождений (т.е. заменяет глобально)
 # g обозначает глобальное значение, как и в глобальном (все)
 def get_count(input_str)
-  input_str.gsub(/[^aeiou]/, '').length
+  input_str.gsub(/[^aeiou]/, '').length # AH: отлично
 end
 
 # Решения codewars
@@ -20,5 +20,6 @@ end
 #
 # Реш 2
 # def getCount(inputStr)
+#   AH: https://stackoverflow.com/questions/7993662/whats-the-difference-between-scan-and-match-on-ruby-string
 #   inputStr.scan(/[aeiou]/).count  - scan возвращает все, что соответствует регулярному выражению.
 # end
