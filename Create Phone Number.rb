@@ -8,6 +8,7 @@ def create_phone_number(num)
   a = num[0..2].join
   b = num[3..5].join
   c = num[6..9].join
+  # AH: не пренебрегай использованием интерполяции: "(#{a}) #{b}-#{c}"
   "(" + a + ") " + b + "-" + c # только я до этого писала puts - не подходит потому что puts вызывает метод на объекте и возвращает nil (то есть ничего не возвращает), а нам надо строку
 end
 
@@ -15,12 +16,14 @@ end
 #
 # Реш 1 - надо объяснение
 # def createPhoneNumber(array)
+#    AH: это тоже интерполяция, просто неименованная. Но она типизирована. %d - числовой символ. Часто ипользуется %s =- строковый символ. Больше тут https://www.gnu.org/software/gawk/manual/gawk.html#Control-Letters
 #   '(%d%d%d) %d%d%d-%d%d%d%d' % array
 # end
 #
 # Реш 2 - лучше моего, объясни что за map(&:join)
 # def createPhoneNumber(digits)
-#   area_code, prefix, *extension = digits.each_slice(3).map(&:join)
+#   AH: map(&:join) - это то же самое что и map { |x| x.join }. Тут важнее понимать что за конструкция &:
+#   area_code, prefix, *extension = digits.each_slice(3).map(&:join) 
 #   "(#{area_code}) #{prefix}-#{extension.join}"
 # end
 #
@@ -36,12 +39,14 @@ end
 #
 # Реш 5 - нужно пояснение
 # def createPhoneNumber(numbers)
+#   AH: тут снова приколы с возможностью помещать в gsub блоки
 #   numbers = numbers.dup
-#   "(###) ###-####".gsub!(/#/) { numbers.shift.to_s }
+#   "(###) ###-####".gsub!(/#/) { numbers.shift.to_s } 
 # end
 #
 # Реш 6 - 5 чел поставили как Best practices, но почему?
 # def createPhoneNumber(numbers)
+#   AH: не знаю для какого языка это круто, но в руби - такое себе
 #   a = numbers
 #   s = ""
 #   s += "("
