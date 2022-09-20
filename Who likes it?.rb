@@ -47,6 +47,7 @@ end
 #
 # Реш 1 - как это работет?
 # def likes(names)
+#   AH: это все интерполяция, доку скидывала в прошлой задаче
 #   case names.length
 #   when 0
 #     "no one likes this"
@@ -63,6 +64,7 @@ end
 # end
 #
 # Реш 2 - когда я пробовала писать выражения с if и условиями типа names.length == 0, мне писало ошибку - NoMethodError (undefined method `length=' for ["Peter"]:Array)
+# AH: вероятно, где-то был прописан не ==, а один =, поэтому и возмущался
 # def likes(names)
 #   return "no one likes this" if names.length == 0
 #   return "#{names.first} likes this" if names.length == 1
