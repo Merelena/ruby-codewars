@@ -22,6 +22,7 @@ end
 #
 # Реш 2 - sum возвращает контрольную сумму - надо разобраться как считает
 # def anagrams(word, words)
+# AH: положение в ISO-8859-1
 #   words.select{|w| w.sum == word.sum}
 # end
 #
